@@ -1,0 +1,484 @@
+/* Allgemeine Einstellungen */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e6d5c3; /* Pastellbraun */
+    color: #3d2b1f;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #5A3D2B;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f8e8d5;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #c7a17a;
+}
+
+/* Icons rechts im Header */
+.icons {
+    font-size: 20px;
+}
+
+.icons i {
+    color: #f8e8d5;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.icons i:hover {
+    color: #c7a17a;
+}
+
+/* Intro */
+.intro {
+    font-size: 20px;
+    margin-top: 120px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* TikTok Video-Bereich */
+.video-section {
+    margin-top: 50px;
+}
+
+.video-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    color: #5A3D2B;
+    margin-bottom: 20px;
+}
+
+/* Video-Container */
+.video-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.video-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-container {
+    position: relative;
+    width: 250px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Beschreibung unter den Videos */
+.video-description {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #5A3D2B;
+}
+
+/* Trends der Woche */
+.trends {
+    margin-top: 50px;
+}
+
+.trends h2 {
+    font-family: 'Great Vibes', cursive;
+    color: #5A3D2B;
+    font-size: 32px;
+}
+
+.trends-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.image-container {
+    text-align: center;
+    position: relative;
+}
+
+.image-container img {
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Trends der Woche - Scrollbarer Bereich */
+.trends-container {
+    position: relative;
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.trends-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Scrollen aktivieren */
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE & Edge */
+    width: 100%;
+    white-space: nowrap;
+    padding: 150px 0;
+}
+
+/* Scrollleiste ausblenden (Chrome, Safari) */
+.trends-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.image-container {
+    min-width: 200px;
+    height: 130px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+}
+
+/* Scroll-Buttons */
+.scroll-btn {
+    background-color: rgba(90, 61, 43, 0.8);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.scroll-btn:hover {
+    background-color: rgba(90, 61, 43, 1);
+}
+
+.left-btn {
+    left: -50px;
+}
+
+.right-btn {
+    right: -50px;
+}
+
+/* Schatten & Umrandung für Videos und Bilder */
+.image-container img,
+.video-container {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Tieferer Schatten */
+    border: 3px solid rgba(126, 81, 32, 0.6); /* Dezente braune Umrandung */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container img:hover,
+.video-container:hover {
+    transform: scale(1.05); /* Leichter Zoom */
+}
+
+/* Tooltip-Text unter den Videos */
+.video-wrapper {
+    position: relative;
+}
+
+.video-tooltip {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(122, 73, 37, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.video-wrapper:hover .video-tooltip {
+    opacity: 1;
+}         
+
+.dark-mode {
+    background-color: #2e1b0f; /* Dunkles Braun */
+    color: #f8e8d5;
+}
+
+.dark-mode header {
+    background-color: #3b2416;
+}
+
+.dark-mode nav ul li a {
+    color: #f8e8d5;
+}
+
+.dark-mode .icons i {
+    color: #f8e8d5;
+}
+
+.dark-mode .intro {
+    background-color: rgba(50, 30, 20, 0.8);
+}
+
+.dark-mode .video-container {
+    background-color: #4a2f1f;
+}
+
+.dark-mode .trends-slider .image-container img {
+    filter: brightness(70%);
+}
+
+.dark-mode .scroll-btn {
+    background-color: #4a2f1f;
+}
+/* Dropdown-Menü Styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #5A3D2B; /* Gleiche Farbe wie Header */
+    color: #f8e8d5;
+    padding: 10px;
+    border-radius: 5px;
+    list-style: none;
+    width: 200px;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-title {
+    font-weight: bold;
+    padding: 5px;
+    color: #c7a17a;
+    pointer-events: none; /* Macht das Feld nicht klickbar */
+}
+
+.dropdown-menu li {
+    padding: 5px 0;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: #f8e8d5;
+    font-size: 14px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    color: #c7a17a; /* Hellere Farbe beim Hover */
+}
+
+/* Dropdown-Container */
+.dropdown-books {
+    position: relative;
+}
+
+/* Die Leiste geht über die ganze Seite */
+.book-slider {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background-color: #5A3D2B;
+    padding: 55px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Zeigt die Leiste, wenn man auf "Neuerscheinungen" geht */
+.dropdown-books:hover .book-slider {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Buch-Container */
+.book {
+    position: relative;
+    display: inline-block;
+    width: 150px;  /* Größere Standardgröße */
+    height: 225px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Buchcover */
+.book img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover-Effekt */
+.book:hover {
+    transform: scale(1.15); /* Etwas weniger als vorher */
+}
+
+.book:hover img {
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Titel unter den Büchern */
+.book-title {
+    text-align: center;
+    font-size: 14px; /* Kleinerer Titel */
+    font-weight: bold;   
+    color: #fff;
+    margin-top: 8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Schatten für besseren Kontrast */
+}
+
+/* Tooltip-Container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif; /* Gleiche Font */
+    color: #f8e8d5; /* Gleiche Schriftfarbe wie die Navigation */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Tooltip-Box */
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 260px;
+    background-color: #5A3D2B;
+    color: #f8e8d5;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 100;
+    top: 120%; /* Abstand unter dem Wort */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Pfeil nach oben */
+.tooltip .tooltip-text::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #5A3D2B transparent;
+}
+
+/* Tooltip anzeigen */
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Button unter dem Text */
+.tooltip .scroll-btn {
+    display: block;
+    margin-top: 65px;
+    padding: 6px 12px;
+    background-color: #c7a17a;
+    color: #3d2b1f;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.tooltip .scroll-btn:hover {
+    background-color: #a17c5a;
+}
+
+
+
+/* Beschreibung unter den Bildern */
+.image-description {
+    font-size: 14px;
+    font-weight: bold;
+    color: #5A3D2B;
+    margin-top: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Beschreibung wird sichtbar, wenn man mit der Maus auf das Bild geht */
+.image-container:hover .image-description {
+    opacity: 1;
+}
+
+
+
+
